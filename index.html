@@ -1,11 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master-Mind</title>
+  <title>Mastermind Game</title>
 </head>
 <body>
-  
+  <h1>Mastermind Game</h1>
+  <div id="gameArea">
+    <p>Level: <span id="level">1</span></p>
+    <p>Enter your guess: <input id="guessInput" type="text"><button onclick="checkGuess()">Check</button></p>
+    <p id="result"></p>
+    <p id="timer"></p>
+  </div>
+
+  <div id="gameOverPopup" style="display: none;">
+    <p>Game Over!</p>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+
+  <script>
+    let level = 1;
+    let secretCode = [];
+    let codeLength = 4; // Initial code length
+    let baseTimeLimit = 30; // Base time limit in seconds for each level
+    let timeLimit = baseTimeLimit;
+
+    let countdownInterval;
+
+    function startGame() {
+      document.getElementById("gameOverPopup").style.display = "none";
+      level = 1;
+      timeLimit = baseTimeLimit;
+      startLevel();
+    }
+
+    function startLevel() {
+      secretCode = generateSecretCode(codeLength);
+      console.log(secretCode);
+      document.getElementById("level").textContent = level;
+      document.getElementById("result").textContent = `Level ${level}: Enter your guesses.`;
+      startCountdown();
+    }
+
+    function startCountdown() {
+      let timeLeft = timeLimit;
+      document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+
+      countdownInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+
+        if (timeLeft <= 0) {
+          clearInterval(countdownInterval);
+          document.getElementById("timer").textContent = "Time's up!";
+          showGameOverPopup();
+        }
+      }, 1000);
+    }
+
+    function showGameOverPopup() {
+      clearInterval(countdownInterval);
+      document.getElementById("gameOverPopup").style.display = "block";
+    }
+
+    function restartGame() {
+      document.getElementById("gameOverPopup").style.display = "none";
+      startGame();
+    }
+
+    function generateSecretCode(length) {
+      const code = [];
+      for (let i = 0; i < length; i++) {
+        code.push(Math.floor(Math.random() * 10));
+      }
+      return code;
+    }
+
+    function checkGuess() {
+      const guessInput = document.getElementById("guessInput");
+      const guess = guessInput.value.trim();
+
+      if (guess.length !== codeLength || !/^\d+$/.test(guess)) {
+        document.getElementById("result").textContent = `Invalid guess. Please enter a ${codeLength}-digit number.`;
+        return;
+      }
+
+      const guessArray = guess.split("").map(Number);
+
+      let correctPositionAndValue = 0;
+      let correctValue = 0;
+
+      for (let i = 0; i < codeLength; i++) {
+        if (guessArray[i] === secretCode[i]) {
+          correctPositionAndValue++;
+        } else if (secretCode.includes(guessArray[i])) {
+          correctValue++;
+        }
+      }
+
+      if (correctPositionAndValue === codeLength) {
+        clearInterval(countdownInterval);
+        document.getElementById("result").textContent = `Congratulations! You guessed the secret code. Level ${level + 1} will have a longer code.`;
+        level++;
+        codeLength++; // Increase code length for the next level
+        timeLimit += 5; // Increase time limit for the next level
+        setTimeout(startLevel, 1000);
+      } else {
+        document.getElementById("result").textContent = `Correct position and value: ${correctPositionAndValue}, Correct value but wrong position: ${correctValue}`;
+      }
+    }
+
+    // Start the game when the page loads
+    startGame();
+  </script>
 </body>
 </html>

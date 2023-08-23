@@ -1,2 +1,3 @@
-//temporary things
-const game = 1;
+let secretCode = [];
+let codeLength = 0;
+
