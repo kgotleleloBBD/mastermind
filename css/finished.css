@@ -1,0 +1,23 @@
+body {
+  background-image: radial-gradient(hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
+}
+
+article {
+  width: 50;
+  height: 50;
+  margin: auto;
+  align-self: center;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: aliceblue;
+}
+
+#next {
+  width: 50;
+  height: 20;
+  margin: auto;
+  border: 2px solid purple;
+  border-radius: 15px;
+  background-color: var(--purple);
+}
