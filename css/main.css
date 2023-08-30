@@ -1,1 +1,60 @@
-/* // template */
+body {
+  background: hsla(0, 0%, 0%, 1);
+  background: linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
+  background: -moz-linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
+  background: -webkit-linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#6f53fd", GradientType=1);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #BC93FF;
+  margin: 0 5px;
+  animation: blink 1.5s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.text-load {
+  color: #BC93FF;
+  font-family: Digitalt;
+  font-size: 2.5vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.3vw;
+}
+
+.logo {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 40vh;
+}

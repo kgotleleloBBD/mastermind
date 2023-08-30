@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; 
+}
+
+body {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse farthest-corner at center center, hsl(251, 92%, 15%), #2f67d8);
+}
+
+.container {
+    width: 80%; 
+    max-width: 450px;
+    height: 400px; 
+    background-color: white;
+    justify-content: center;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin-top: 20px; 
+    justify-content: center;
+}
+
+.fieldcontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.field {
+    margin: 5px 0; 
+    border-radius: 30px; 
+}
+
+.field.input {
+    height: auto; 
+    width: 80%; 
+    background-color: #FFECAF;
+}
+
+.field.btn {
+    width: 20%; 
+    font-weight: 900;
+    font-size: 100%;
+    color: blue;
+    background-color: #FE7BE5;
+}
+.field.lbl{
+    width: 80%;
+    font-weight: 900;
+    font-size: 100%;
+    color: blue;
+}
+
+#errorLbl {
+    visibility: hidden;
+}
+
+.circle {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 15%;
+    padding-bottom: 15%;  
+    border-radius: 50%;
+    transform: translateX(-50%) ;
+    margin: auto;
+    background-color: white;
+    top: 60px;
+    left: 50%;
+    z-index: 2;
+    background-image: url('../assets/smile_img.png');
+    background-repeat: no-repeat;
+    background-size: 80%; 
+    background-position: center; 
+}

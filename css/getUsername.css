@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    justify-content: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse farthest-corner at center bottom, hsl(251, 90%, 30%), #2f67d8);
+}
+
+.container {
+    justify-content: flex-end;
+    position: absolute;
+    width: 80%;
+    max-width: fit-content;
+    height: 40vmin;
+    max-height: fit-content;
+    text-align: center;
+    border-radius: 50px;
+    padding: 10vmin 7vmin 2vmin 7vmin;
+    background-color: white;
+    bottom: 100px;
+    left: 35%;
+    z-index: 1;
+}
+
+
+.circle {
+    position: absolute;
+    width: 15%;
+    padding-bottom: 15%;  
+    border-radius: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    background-color: white;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+    background-image: url('../assets/images (1).jpeg');
+    background-size: 80%; 
+    background-position: center; 
+}
+
+.field {
+    margin: 62,5%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.field.btn {
+    background-color: #FE7BE5;
+    border-radius: 30px;
+    height: 3,125rem;
+    width: 100%;
+    font-weight: 900;
+    font-size: 100%;
+    color: blue;
+}
+
+.field.input{
+    background-color: #FFECAF;
+    border-radius: 30px;
+    width: 100%;
+    height: 80%px;
+}
+.field.lbl{
+    font-weight: 900;
+    font-size: 100%;
+    color: blue;
+    
+}
+
+@media (max-width: 600px) {
+    body {
+        justify-content: flex-start; 
+    }
+
+    .container {
+        width: 90%; 
+        max-width: none; 
+        padding: 5vmin; 
+        top: 20px; 
+        left: 0; 
+    }
+
+    .circle {
+        width: 25%; 
+        padding-bottom: 25%; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        top: 10px; 
+    }
+
+    .field.input {
+        width: 90%; 
+        max-width: none; 
+        height: 40px; 
+    }
+}
+
+
