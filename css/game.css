@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "digitalt";
+  src: url("path-to-your-font/digitalt.ttf") format("truetype");
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* .page-container {
+   height: 100%;
+   width: 100%;
+   display: flex; */
+  /* position: absolute; */
+ /* 
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  /* border: 3px solid white
+} */
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between;;  */
+  align-items: center;
+  /* margin: 25px auto; */
+  /* padding: 0 15px; */
+  /* max-width: 100%; */
+  border: 3px solid white;
+}
+
+.game-level-tag {
+    display: flex;
+    padding: 3px 15px;
+    width: 112px;
+    border-radius: 33px;
+    background-color: #9F51FE;
+    color: white;
+    font-family: "digitalt", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    border: 3px solid white;
+    font-weight: 500;
+    font-size: 22px;
+    /* margin: 25px auto; */
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* You'll need to import the "digitalt" font using @font-face or link to a web font. */
+  
+ .settings-container {
+    display: inline-block;
+    /* margin-right: auto; */
+    position: relative;
+    border: 3px solid white;
+    /* margin: 25px auto; */
+    /* margin-right: 500px; */
+
+  }
+  
+  .settings-btn {
+    /* width: 23px;
+    height: 23px; */
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    /* top: 100%; */
+    left: 0;
+    /* width: 23px; */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+  }
+  
+.settings-container:hover .dropdown {
+        display: flex;
+        flex-direction: column; /* Arrange buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+        padding-top: 8px;
+        gap: 8px; /* Vertical gap between buttons */
+}
+  
+.icon-btn {
+    /* width: 21.29px;
+    height: 21.29px; */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.countdown-container {
+  display: flex;
+  color: white;
+  font-family: "digitalt", sans-serif;
+  font-size: 18px;
+  margin-left: auto;
+}
+
+.clock-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  /* fill: #333; */
+}
+
+.settings-container,
+.countdown-container,
+.game-level-tag {
+  flex: 1; 
+}
+
+.game-card {
+  width: 281px;
+  height: 194px;
+  background-color: #FFFEFF;
+  border: 1px solid #FFFEFF;
+  border-radius: 21px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.game-content {
+  text-align: center;
+}
+
+.instruction {
+  /* margin-bottom: 10px; */
+  color: #6F53FD;
+  font-family: "digitalt", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.guess-input {
+  width: 182px;
+  height: 30px;
+  border-radius: 31px;
+  border: none;
+  background-color: #C2FDFF;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  color: #228AED;
+  border: 1px solid white;
+  font-family: "digitalt", sans-serif;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: normal;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.guess-input:focus {
+  color: #228AED; 
+  outline: none; 
+  border: 1px solid #228AED;
+}
+
+.submit-button {
+  width: 127px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  background-color: #C2FDFF;
+  cursor: pointer;
+  font-family: "digitalt", sans-serif;
+  font-weight: normal;
+  font-size: 19px;
+  flex-shrink: 0;
+  border: 3px solid white;
+  background: linear-gradient(45deg, #C16DFE 0%, #C16DFE 50%, #9A4AFE 50%, #9A4AFE 100%);
+  background-size: 150% 200%;
+  border: 2px solid #FFF;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+
+
+
+
