@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "digitalt";
+    src: url("../assets/fonts/Digitalt.ttf") format("truetype");
+}
 
 body {
     
@@ -8,6 +12,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .submit-button {
