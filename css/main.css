@@ -1,9 +1,8 @@
 body {
-  background: hsla(0, 0%, 0%, 1);
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Use viewport height */
   background: linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
-  background: -moz-linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
-  background: -webkit-linear-gradient(180deg, hsla(0, 0%, 0%, 1) 0%, hsla(250, 98%, 66%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#6f53fd", GradientType=1);
 }
 
 .loader {
@@ -57,4 +56,18 @@ body {
   justify-content: center;
   align-items: end;
   height: 40vh;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  width: 201px;
+  height: 72px;
+  background-color: #D96DFF;
+  border-radius: 50%;
+  z-index: -1; /* Place the ellipse behind the logo */
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(20px);
 }

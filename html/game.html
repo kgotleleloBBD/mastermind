@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <link rel="stylesheet" type="text/css" href="../css/game.css">
+  <script src="../javascript/game.js" defer></script>
+  <title>Mastermind-Home</title>
+</head>
+<body>
+  <div class="page-container">
+    <div class="stats-container">
+      <div class="settings-container">
+       <button class="settings-btn">
+          <img src="../assets/settings_icon.svg" alt="Settings Icon">
+        </button>
+        <div class="dropdown">
+          <button class="icon-btn sound-off">
+            <img src="../assets/mute_icon.svg" alt="Sound Off Icon">
+          </button>
+          <button class="icon-btn sound-on">
+            <img src="../assets/mic_icon.svg" alt="Sound On Icon" >
+          </button>
+          <button class="icon-btn info">
+            <img src="../assets/info_btn.svg" alt="Info Icon" >
+          </button>
+        </div>
+      </div>
+       <a class="game-level-tag">Level <span id="level">1</span></a>
+      <div class="countdown-container">
+        <div class="timer">
+          <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+        <img class="clock-icon" src="../assets/clock.svg" alt="Clock Icon" width="21.29" height="21.29">
+      </div>
+    </div>
+    <div class="game-card">
+        <div class="game-content">
+          <p class="instruction">CRACK THE CODE!</p>
+          <p class="sub-instruction">The code is made up of 4 numbers</p>
+          <input type="text" class="guess-input" >
+          <button class="submit-button" onclick="checkGuess()">CHECK</button>
+        </div> 
+    </div>
+    <div id="gameOverPopup" class="modal">
+      <div class="modal-content">
+        <button class="close" onclick="closePopup()">
+          <img src="../assets/close_btn.svg" alt="Close Icon">
+        </button>
+        <div>
+          <div class="radial_bg">
+            <img src="../assets/Vector 9.svg">
+          </div>
+          <div class="stars">
+            <img src="../assets/star_ing.svg" alt="Ribbon">
+          </div>
+          <div class="ribbon-svg">
+            <img src="../assets/ribbon.svg" alt="Ribbon">
+          </div>
+          <div class="ribbon-content">
+            <h2 class="gameOverText">Game Over</h2>
+          </div>
+        </div>
+        <p class="timeUp">Your time is up!</p>
+        <div class="nav_buttons">
+          <button class="home_btn">
+            <img src="../assets/home_btn.svg" alt="Home Icon">
+          </button>
+          <button class="redo_btn" onclick="restartGame()">
+            <img src="../assets/redo_btn.svg" alt="Restart Icon">
+          </button>
+        </div>    
+      </div>
+    </div>
+    <div id="how-to-play" class="how-to-play">
+      <div class="how-to-play-content">
+        <button class="close" onclick="closePopup()">
+          <img src="../assets/close_btn.svg" alt="Close Icon">
+        </button>
+        <img src="../assets/mastermind.png">
+        <section>
+          <h1>How To Play</h1>
+          <ul>
+            <li>
+              A unique code is generated which you need to crack.
+            </li>
+            <li>
+              Some other instructions i guess....
+            </li>
+          </ul>
+
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
