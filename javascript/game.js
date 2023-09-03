@@ -106,7 +106,7 @@ function closePopup() {
   }
   gameOverPopup.style.display = "none";
   howToPopup.style.display = "none";
-  window.location.href = 'getUserName.html';
+  window.location.href = 'home.html';
 }
 
 function mudeAudio() {
