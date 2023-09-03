@@ -12,32 +12,16 @@
   box-sizing: border-box;
 }
 
-/* .page-container {
-   height: 100%;
-   width: 100%;
-   display: flex; */
-  /* position: absolute; */
- /* 
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
-  /* border: 3px solid white
-} */
-
 .stats-container {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between;;  */
+  width: 100%;
   align-items: center;
-  /* margin: 25px auto; */
-  /* padding: 0 15px; */
-  /* max-width: 100%; */
-  border: 3px solid white;
+  margin: 25px auto;
 }
 
 .game-level-tag {
-    display: flex;
+    display: inline-block;
     padding: 3px 15px;
     width: 112px;
     border-radius: 33px;
@@ -50,7 +34,6 @@
     border: 3px solid white;
     font-weight: 500;
     font-size: 22px;
-    /* margin: 25px auto; */
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.15);
   }
   
@@ -60,7 +43,6 @@
     display: inline-block;
     /* margin-right: auto; */
     position: relative;
-    border: 3px solid white;
     /* margin: 25px auto; */
     /* margin-right: 500px; */
 
@@ -93,8 +75,6 @@
 }
   
 .icon-btn {
-    /* width: 21.29px;
-    height: 21.29px; */
     background: none;
     border: none;
     cursor: pointer;
@@ -102,6 +82,7 @@
 
 .countdown-container {
   display: flex;
+  justify-content: flex-end;
   color: white;
   font-family: "digitalt", sans-serif;
   font-size: 18px;
@@ -112,7 +93,6 @@
   width: 24px;
   height: 24px;
   margin-left: 10px;
-  /* fill: #333; */
 }
 
 .settings-container,
@@ -122,47 +102,61 @@
 }
 
 .game-card {
-  width: 281px;
-  height: 194px;
+  height: 50vh; 
+  width: 65vw;
   background-color: #FFFEFF;
   border: 1px solid #FFFEFF;
   border-radius: 21px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
   align-items: center;
-  margin: auto;
 }
 
 .game-content {
   text-align: center;
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  align-items: center; 
 }
 
 .instruction {
-  /* margin-bottom: 10px; */
   color: #6F53FD;
   font-family: "digitalt", sans-serif;
-  font-size: 16px;
+  font-size: 200%;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  }
+
+.sub-instruction {
+  color: #B20D78;
+  font-family: "digitalt", sans-serif;
+  font-size: 120%;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   }
 
 .guess-input {
-  width: 182px;
-  height: 30px;
+  width: 60%;
+  height: 50px;
   border-radius: 31px;
   border: none;
   background-color: #C2FDFF;
   padding: 5px 15px;
-  margin-bottom: 10px;
   color: #228AED;
   border: 1px solid white;
   font-family: "digitalt", sans-serif;
   font-weight: 500;
   font-size: 23px;
   line-height: normal;
+  box-sizing: border-box;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+  margin-top: 15px;
 }
 
 .guess-input:focus {
@@ -188,6 +182,110 @@
   border: 2px solid #FFF;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
   color: white;
+  margin-top: 20px;
+}
+
+.gameOverPopup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  height: 50vh; 
+  width: 50vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.gameOverText {
+  font-family: "digitalt", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff; 
+  -webkit-text-stroke: 2px #B20D78; 
+}
+
+.timeUp {
+  color:#B20D78;
+  font-family: "digitalt", sans-serif;
+  transform: translate(0%, -305%);
+}
+
+.nav_buttons {
+  transform: translate(0%, -105%);
+}
+
+.ribbon-svg {
+  z-index: 1;
+  justify-self: center;
+}
+
+.stars {
+  z-index: 2;
+  display: flex;
+  transform: translate(0%, 25%);
+  justify-content: center;
+}
+
+.ribbon-content {
+  transform: translate(0%, -285%);
+  z-index: 3;
+  justify-content: center;
+}
+
+.radial_bg {
+  transform: translate(0%, 70%);
+  justify-self: center;
+}
+
+.home_btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.redo_btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
 }
 
 
