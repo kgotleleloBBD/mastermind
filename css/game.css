@@ -1,6 +1,6 @@
 @font-face {
   font-family: "digitalt";
-  src: url("path-to-your-font/digitalt.ttf") format("truetype");
+  src: url("../assets/fonts/Digitalt.ttf") format("truetype");
 }
 
 .page-container {
@@ -37,20 +37,14 @@
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.15);
   }
   
-  /* You'll need to import the "digitalt" font using @font-face or link to a web font. */
-  
  .settings-container {
     display: inline-block;
-    /* margin-right: auto; */
+    padding-left: 25px;
     position: relative;
-    /* margin: 25px auto; */
-    /* margin-right: 500px; */
 
   }
   
   .settings-btn {
-    /* width: 23px;
-    height: 23px; */
     background: none;
     border: none;
     cursor: pointer;
@@ -59,9 +53,7 @@
   .dropdown {
     display: none;
     position: absolute;
-    /* top: 100%; */
-    left: 0;
-    /* width: 23px; */
+    left: 15;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
   }
@@ -85,8 +77,9 @@
   justify-content: flex-end;
   color: white;
   font-family: "digitalt", sans-serif;
-  font-size: 18px;
+  font-size: 28px;
   margin-left: auto;
+  padding-right: 25px;
 }
 
 .clock-icon {
@@ -185,13 +178,6 @@
   margin-top: 20px;
 }
 
-.gameOverPopup{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
 .modal {
   display: flex;
   position: fixed;
@@ -288,7 +274,33 @@
   outline: none;
 }
 
+.how-to-play{
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+.how-to-play-content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  height: 90vh; 
+  width: 50vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+}
 
 
 
