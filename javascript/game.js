@@ -110,12 +110,12 @@ function closePopup() {
 }
 
 function mudeAudio() {
-  if (music.muted) {
+  if (muted) {
     muted = false;
-    music.mute();
+    music.play();
   } else {
     muted = true;
-    music.mute();
+    music.pause();
   }
 }
 
