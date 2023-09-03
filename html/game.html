@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,30 @@
   <script src="../javascript/game.js" defer></script>
   <title>Mastermind-Home</title>
 </head>
+
 <body>
   <div class="page-container">
     <div class="stats-container">
       <div class="settings-container">
-       <button class="settings-btn">
+        <button class="settings-btn">
           <img src="../assets/settings_icon.svg" alt="Settings Icon">
+        </button>
+        <button class="mute-button" alt="Mute">
+          <img src="../assets/mute_icon.svg">
         </button>
         <div class="dropdown">
           <button class="icon-btn sound-off">
             <img src="../assets/mute_icon.svg" alt="Sound Off Icon">
           </button>
           <button class="icon-btn sound-on">
-            <img src="../assets/mic_icon.svg" alt="Sound On Icon" >
+            <img src="../assets/mic_icon.svg" alt="Sound On Icon">
           </button>
           <button class="icon-btn info">
-            <img src="../assets/info_btn.svg" alt="Info Icon" >
+            <img src="../assets/info_btn.svg" alt="Info Icon">
           </button>
         </div>
       </div>
-       <a class="game-level-tag">Level <span id="level">1</span></a>
+      <a class="game-level-tag">Level <span id="level">1</span></a>
       <div class="countdown-container">
         <div class="timer">
           <span id="minutes">00</span>:<span id="seconds">00</span>
@@ -36,12 +41,12 @@
       </div>
     </div>
     <div class="game-card">
-        <div class="game-content">
-          <p class="instruction">CRACK THE CODE!</p>
-          <p class="sub-instruction">The code is made up of 4 numbers</p>
-          <input type="text" class="guess-input" >
-          <button class="submit-button" onclick="checkGuess()">CHECK</button>
-        </div> 
+      <div class="game-content">
+        <p class="instruction">CRACK THE CODE!</p>
+        <p class="sub-instruction">The code is made up of 4 numbers</p>
+        <input type="text" class="guess-input">
+        <button class="submit-button" onclick="checkGuess()">CHECK</button>
+      </div>
     </div>
     <div id="gameOverPopup" class="modal">
       <div class="modal-content">
@@ -70,7 +75,7 @@
           <button class="redo_btn" onclick="restartGame()">
             <img src="../assets/redo_btn.svg" alt="Restart Icon">
           </button>
-        </div>    
+        </div>
       </div>
     </div>
     <div id="how-to-play" class="how-to-play">
@@ -94,5 +99,7 @@
       </div>
     </div>
   </div>
+  <audio id="music" src="../assets/audio/Mastermind - Theme Tune.mp3" autoplay loop></audio>
 </body>
+
 </html>
