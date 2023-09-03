@@ -157,6 +157,13 @@ howToBtn[2].addEventListener('click', (e) => {
 mute.addEventListener("click", mudeAudio);
 unmute.addEventListener("click", unmuteAudio);
 
+document.getElementById("guess-input").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the default Enter key behavior (e.g., line break)
+      checkGuess();
+    }
+  });
+
 // Start the game when the page loads
 startGame();
 addEventListener("DOMContentLoaded", (event) => { unmuteAudio() });
