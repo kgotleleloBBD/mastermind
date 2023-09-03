@@ -102,10 +102,11 @@ function closePopup() {
   if (gameOverPopup.style.display == "block") {
     gameOverPopup.style.display = "none";
     howToPopup.style.display = "none";
-    window.location.href = 'getUserName.html';
+    window.location.href = 'home.html';
   }
   gameOverPopup.style.display = "none";
   howToPopup.style.display = "none";
+  window.location.href = 'getUserName.html';
 }
 
 function pausePlay() {
@@ -118,11 +119,13 @@ function pausePlay() {
   }
 }
 
-navigateHome[0].addEventListener('click', () => {
-  window.location.href = 'getUserName.html';
+navigateHome[0].addEventListener('click', (e) => {
+  e.preventDefault();
+  window.location.href = 'home.html';
 });
 
-howToBtn[2].addEventListener('click', () => {
+howToBtn[2].addEventListener('click', (e) => {
+  e.preventDefault();
   howToPopup.style.display = "block";
 });
 
