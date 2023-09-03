@@ -180,7 +180,7 @@
 }
 
 .modal {
-  display: flex;
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -277,15 +277,15 @@
 
 /* Styles for the popup container */
 .how-to-play {
-  display: none; /* Hide the popup by default */
+  display: none; 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  z-index: 999; /* Ensure it's above other elements */
-  overflow: auto; /* Enable scrolling within the popup if needed */
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999; 
+  overflow: auto; 
 }
 
 .how-to-play-content {
