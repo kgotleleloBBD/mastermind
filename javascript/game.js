@@ -109,13 +109,13 @@ function closePopup() {
   window.location.href = 'getUserName.html';
 }
 
-function pausePlay() {
-  if (muted) {
-    muted = true;
-    music.play();
-  } else {
+function mudeAudio() {
+  if (music.muted) {
     muted = false;
-    music.pause();
+    music.mute();
+  } else {
+    muted = true;
+    music.mute();
   }
 }
 
@@ -129,7 +129,7 @@ howToBtn[2].addEventListener('click', (e) => {
   howToPopup.style.display = "block";
 });
 
-mute.addEventListener("click", pausePlay);
+mute.addEventListener("click", mudeAudio);
 
 // Start the game when the page loads
 startGame();
