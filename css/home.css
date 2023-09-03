@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: radial-gradient(50% 50.00% at 50% 50.00%, #A659FE 0%, #6F53FD 100%);
+    background: radial-gradient(ellipse farthest-corner at center center, hsl(251, 92%, 15%), #2f67d8);
   }
 
 .background-layer {
