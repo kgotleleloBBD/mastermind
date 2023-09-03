@@ -135,4 +135,5 @@ unmute.addEventListener("click", unmuteAudio);
 
 // Start the game when the page loads
 startGame();
-
+addEventListener("DOMContentLoaded", (event) => { unmuteAudio() });
+onDOMContentLoaded = (event) => { unmuteAudio() };
