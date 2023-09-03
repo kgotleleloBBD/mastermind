@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,12 @@
   <script src="../javascript/game.js" defer></script>
   <title>Mastermind-Home</title>
 </head>
+
 <body>
   <div class="page-container">
     <div class="stats-container">
       <div class="settings-container">
-       <button class="settings-btn">
+        <button class="settings-btn">
           <img src="../assets/settings_icon.svg" alt="Settings Icon">
         </button>
         <div class="dropdown">
@@ -20,14 +22,14 @@
             <img src="../assets/mute_icon.svg" alt="Sound Off Icon">
           </button>
           <button class="icon-btn sound-on">
-            <img src="../assets/mic_icon.svg" alt="Sound On Icon" >
+            <img src="../assets/mic_icon.svg" alt="Sound On Icon">
           </button>
           <button class="icon-btn info">
-            <img src="../assets/info_btn.svg" alt="Info Icon" >
+            <img src="../assets/info_btn.svg" alt="Info Icon">
           </button>
         </div>
       </div>
-       <a class="game-level-tag">Level <span id="level">1</span></a>
+      <a class="game-level-tag">Level <span id="level">1</span></a>
       <div class="countdown-container">
         <div class="timer">
           <span id="minutes">00</span>:<span id="seconds">00</span>
@@ -36,12 +38,12 @@
       </div>
     </div>
     <div class="game-card">
-        <div class="game-content">
-          <p class="instruction">CRACK THE CODE!</p>
-          <p class="sub-instruction">The code is made up of 4 numbers</p>
-          <input type="text" class="guess-input" >
-          <button class="submit-button" onclick="checkGuess()">CHECK</button>
-        </div> 
+      <div class="game-content">
+        <p class="instruction">CRACK THE CODE!</p>
+        <p class="sub-instruction">The code is made up of 4 numbers</p>
+        <input type="text" class="guess-input">
+        <button class="submit-button" onclick="checkGuess()">CHECK</button>
+      </div>
     </div>
     <div id="gameOverPopup" class="modal">
       <div class="modal-content">
@@ -70,7 +72,7 @@
           <button class="redo_btn" onclick="restartGame()">
             <img src="../assets/redo_btn.svg" alt="Restart Icon">
           </button>
-        </div>    
+        </div>
       </div>
     </div>
     <div id="how-to-play" class="how-to-play">
@@ -82,17 +84,89 @@
         <section>
           <h1>How To Play</h1>
           <ul>
-            <li>
-              A unique code is generated which you need to crack.
-            </li>
-            <li>
-              Some other instructions i guess....
-            </li>
-          </ul>
+            <h1>Mastermind Game</h1>
+
+            <div>
+              <h2>Game Objective:</h2>
+              <p>The goal of the game is to guess the secret code within a certain time limit. The code consists of a
+                sequence of digits.</p>
+            </div>
+
+            <div>
+              <h2>Game Elements:</h2>
+              <ul>
+                <li>
+                  <strong>Level:</strong> The current level is displayed at the top of the game area. Each level
+                  increases the difficulty by adding more digits to the secret code.
+                </li>
+                <li>
+                  <strong>Enter your guess:</strong> Enter your guess in the input field provided. Your guess should be
+                  a numerical sequence with the same number of digits as the secret code.
+                </li>
+                <li>
+                  <strong>Check Button:</strong> Click the "Check" button to check your guess.
+                </li>
+                <li>
+                  <strong>Result:</strong> The result of your guess will be displayed below. It shows how many digits
+                  are in the correct position and have the correct value, as well as how many digits have the correct
+                  value but are in the wrong position.
+                </li>
+                <li>
+                  <strong>Timer:</strong> A timer displays the remaining time for each level. If you run out of time,
+                  the game is over.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2>Gameplay:</h2>
+              <ol>
+                <li>
+                  <strong>Start Game:</strong> When you first open the page, the game starts automatically. The level is
+                  set to 1, and you have a certain amount of time to guess the secret code.
+                </li>
+                <li>
+                  <strong>Guessing:</strong> Enter your guess in the input field and click "Check" to submit your guess.
+                </li>
+                <li>
+                  <strong>Feedback:</strong> After each guess, the game will provide feedback on how many digits are
+                  correct in terms of position and value.
+                </li>
+                <li>
+                  <strong>Level Up:</strong> If you guess the secret code correctly within the time limit, you'll
+                  advance to the next level. The code length and time limit will increase for the next level.
+                </li>
+                <li>
+                  <strong>Game Over:</strong> If you run out of time, the "Game Over!" popup will appear, allowing you
+                  to restart the game.
+                </li>
+              </ol>
+            </div>
+
+            <div>
+              <h2>Restarting the Game:</h2>
+              <p>If you want to restart the game at any point, click the "Restart" button on the "Game Over!" popup.</p>
+            </div>
+
+            <div>
+              <h2>Winning the Game:</h2>
+              <p>To win the game, you must successfully guess the secret code for all levels.</p>
+            </div>
+
+            <div>
+              <h2>Note:</h2>
+              <p>
+                - Ensure your guesses are valid by entering a numerical sequence with the same number of digits as the
+                secret code.<br>
+                - The timer is your enemy; try to guess the code before time runs out.<br>
+                - Enjoy the challenge of progressively longer secret codes as you advance through the levels.
+              </p>
+            </div>
 
         </section>
       </div>
     </div>
   </div>
 </body>
+
 </html>
