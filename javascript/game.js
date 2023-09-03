@@ -1,7 +1,7 @@
 let level = 1;
 let secretCode = [];
 let codeLength = 4; // Initial code length
-let baseTimeLimit = 30; // Base time limit in seconds for each level
+let baseTimeLimit = 60; // Base time limit in seconds for each level
 let timeLimit = baseTimeLimit;
 let muted = false;
 const instruction = document.getElementsByClassName("sub-instruction");
@@ -32,20 +32,40 @@ function startLevel() {
 
 function startCountdown() {
   let timeLeft = timeLimit;
-  let timeDisplay = document.getElementById("seconds");
-  timeDisplay.innerHTML = timeLeft;
+  let isMinuteMode = true;
+  updateTimerDisplay(timeLeft, isMinuteMode);
+
 
   countdownInterval = setInterval(() => {
     timeLeft--;
-    timeDisplay.innerHTML = timeLeft;
-
     if (timeLeft <= 0) {
       clearInterval(countdownInterval);
-      // document.getElementById("timer").textContent = "Time's up!";
       showGameOverPopup();
+    } else {
+        if (isMinuteMode && timeLeft <= 60) {
+            isMinuteMode = false;
+          }
+        updateTimerDisplay(timeLeft, isMinuteMode);
     }
   }, 1000);
 }
+
+function updateTimerDisplay(timeLeft, isMinuteMode) {
+
+    let secondsDisplay = document.getElementById("seconds");
+    let minutesDisplay = document.getElementById("minutes");
+
+    if (isMinuteMode) {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        secondsDisplay.innerHTML = seconds;
+        minutesDisplay.innerHTML = minutes;
+      } else {
+        secondsDisplay.innerHTML = timeLeft;
+        minutesDisplay.innerHTML = 0;
+      }
+
+  }
 
 function showGameOverPopup() {
   clearInterval(countdownInterval);
@@ -54,6 +74,7 @@ function showGameOverPopup() {
 
 function restartGame() {
   gameOverPopup.style.display = "none";
+  document.getElementById('guess-input').value = '';
   startGame();
 }
 
@@ -70,7 +91,8 @@ function checkGuess() {
   const guess = guessInput.value.trim();
 
   if (guess.length !== codeLength || !/^\d+$/.test(guess)) {
-    instruction[0].textContent = `Invalid guess! Please enter a ${codeLength}-digit code.`
+    instruction[0].textContent = `Invalid guess! Please enter a ${codeLength}-digit code.`;
+    document.getElementById('guess-input').value = '';
     return;
   }
 
@@ -92,11 +114,14 @@ function checkGuess() {
     instruction[0].textContent = `Congratulations! You cracked the secret code. Level ${level + 1} will have a longer code.`;
     level++;
     codeLength++; // Increase code length for the next level
-    timeLimit += 5; // Increase time limit for the next level
+    timeLimit += 30; // Increase time limit for the next level
     setTimeout(startLevel, 1000);
+    document.getElementById('guess-input').value = '';
   } else {
     instruction[0].textContent = `Correct position and value: ${correctPositionAndValue}, Correct value but wrong position: ${correctValue}`;
   }
+
+  
 }
 
 function closePopup() {
@@ -107,7 +132,6 @@ function closePopup() {
   }
   gameOverPopup.style.display = "none";
   howToPopup.style.display = "none";
-  window.location.href = 'home.html';
 }
 
 function mudeAudio() {
