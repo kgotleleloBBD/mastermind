@@ -10,6 +10,7 @@ const howToPopup = document.getElementById("how-to-play");
 const navigateHome = document.getElementsByClassName('home_btn');
 const howToBtn = document.getElementsByClassName('icon-btn');
 const mute = document.getElementById('mute-button');
+const unmute = document.getElementById('unmute-button');
 const music = document.getElementById('music');
 
 let countdownInterval;
@@ -110,13 +111,13 @@ function closePopup() {
 }
 
 function mudeAudio() {
-  if (muted) {
-    muted = false;
-    music.play();
-  } else {
-    muted = true;
-    music.pause();
-  }
+  muted = true;
+  music.pause();
+}
+
+function unmuteAudio() {
+  muted = false;
+  music.play();
 }
 
 navigateHome[0].addEventListener('click', (e) => {
@@ -130,6 +131,7 @@ howToBtn[2].addEventListener('click', (e) => {
 });
 
 mute.addEventListener("click", mudeAudio);
+unmute.addEventListener("click", unmuteAudio);
 
 // Start the game when the page loads
 startGame();
